@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('managers', function (Blueprint $table) {
-            //
-        });
+   	 Schema::create('managers', function (Blueprint $table) {	
+	    $table->increments('id');
+            $table->string('name');
+	    $table->string('email')->unique();
+	    $table->string('coutry');
+	    $table->string('phone');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->timestamps();
+    	});   
     }
 
     /**
