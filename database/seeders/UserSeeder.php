@@ -14,10 +14,11 @@ class UserSeeder extends Seeder
      */
 public function run(): void
       {   
-	\App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
           \App\Models\User::factory()->create([
-               'name' => 'Test User',
+          'api_token' => Str::random(50),
+          'name' => 'Test User',
           'email' => Str::random(10).'@gmail.com'
           ]);
     }

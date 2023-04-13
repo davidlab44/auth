@@ -15,18 +15,14 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+Route::post('products',[App\Http\Controllers\ProductController::class, 'store']);
+Route::put('products/{id}',[App\Http\Controllers\ProductController::class, 'update']);
+Route::delete('products/{id}',[App\Http\Controllers\ProductController::class, 'delete']);
+
 /*
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 */
-/*
-Route::get('product', 'ProductController@index');
-Route::get('product/{id}', 'ProductController@show');
-Route::post('product', 'ProductController@store');
-Route::put('product/{id}', 'ProductController@update');
-Route::delete('product/{id}', 'ProductController@delete');
- */
-Route::put('product/{id}', 'ProductController@update');
-
-//Route::get('products',['as'=>'products.index','uses'=>'ProductController@index']);
