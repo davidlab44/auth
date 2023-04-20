@@ -20,7 +20,9 @@ class ProductFactory extends Factory
         return [
 	    'name' => Str::random(10),
 	    'description' => "Loren ipsum dolor tehjyt hepsum",
-	    'price' => 2000
+	    'image' => "https://static9.depositphotos.com/1642482/1148/i/600/depositphotos_11489401-stock-photo-orange-fruit.jpg",
+	    'price' => 2000,
+	    'requested_ammount' => 0
 	];
     }
 }
