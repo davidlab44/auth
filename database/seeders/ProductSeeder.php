@@ -20,7 +20,7 @@ class ProductSeeder extends Seeder
            'description' => Str::random(100),
 	   'image'=> "https://static9.depositphotos.com/1642482/1148/i/600/depositphotos_11489401-stock-photo-orange-fruit.jpg",
 	   'price' => 2000,
-	   'requested_ammount' => 0
+	   'requested_amount' => 0
         ]);
     }
 }
