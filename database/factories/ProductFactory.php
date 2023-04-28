@@ -18,11 +18,13 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-	    'name' => Str::random(10),
+	    'name' => "Limon",
 	    'description' => "Loren ipsum dolor tehjyt hepsum",
 	    'image' => "https://static9.depositphotos.com/1642482/1148/i/600/depositphotos_11489401-stock-photo-orange-fruit.jpg",
 	    'price' => 2000,
-	    'requested_amount' => 0
+	    'requested_amount' => 0,
+	    'is_milligram' => 1,
+	    'is_unit' => 0
 	];
     }
 }

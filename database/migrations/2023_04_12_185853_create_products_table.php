@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('description');
             $table->string('image');
             $table->integer('price');
-            $table->integer('requested_amount');
+	    $table->integer('requested_amount');
+	    $table->integer('is_milligram');
+	    $table->integer('is_unit');
             $table->timestamps();
         });   
     }
