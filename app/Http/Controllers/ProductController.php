@@ -22,7 +22,7 @@ class ProductController extends Controller
 	   // return "nada";
 	  // return  $request->name;  
 	  return Product::create($request->all());
-}
+    }
  
 
     public function update(Request $request, $id)
