@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
 	    $table->id();
+	    $table->integer('company_id');
+	    $table->string('role');
 	    $table->string('api_token', 60)->unique()->nullable();
             $table->string('name');
             $table->string('email')->unique();

@@ -19,6 +19,8 @@ class UserFactory extends Factory
     {
         return [
             'api_token' => Str::random(50),
+	    'company_id' => 1,	
+            'role' => fake()->randomElement(['admin', 'checkout', 'salesman']),
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),

@@ -18,7 +18,9 @@ public function run(): void
 
           \App\Models\User::factory()->create([
           'api_token' => Str::random(50),
-          'name' => 'Test User',
+	  'company_id' => 1,
+	  'role' => 'checkout',
+	  'name' => 'Test User',
           'email' => Str::random(10).'@gmail.com'
           ]);
     }

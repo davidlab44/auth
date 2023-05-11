@@ -39,8 +39,9 @@ class ProductController extends Controller
     */ 
 
 
-    public function pictures(Request $request): RedirectResponse
+    public function pictures(Request $request)
     {
+	
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -48,17 +49,21 @@ class ProductController extends Controller
         $imageName = time().'.'.$request->image->extension();  
          
         $request->image->move(public_path('images'), $imageName);
-      
+	
+
+
         /* 
             Write Code Here for
             Store $imageName name in DATABASE from HERE 
         */
-
+        
 	$obj = (object) [
-              'aString' => 'some string','request'=>$request,'imageName'=>$imageName
+              'aString' => 'some string','request'=>$request,'imageName'=>$imageName,'image'=>$request->image
           ];
-	echo json_encode($obj);
-
+	return json_encode($obj);
+	 
+	//return true;
+	//return response()->json('image null');
 
 	/*
         return back()
