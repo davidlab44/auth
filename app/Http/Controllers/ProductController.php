@@ -54,8 +54,9 @@ class ProductController extends Controller
 
 	// Make sure you've got the Page model
 	if($product) {
-	   $product->image = "tot/product/".$imageName;
-   	   $product->save();
+	   $product->image = "public/tot/product/".$imageName;
+	   $product->save();
+	   return $product;
         }
         /* 
             Write Code Here for
@@ -68,7 +69,7 @@ class ProductController extends Controller
 	return json_encode($obj);
         */ 
 	
-	return $request->id_product;
+	return "nada".$product;
 	
 	//return response()->json('image null');
 
