@@ -43,26 +43,33 @@ class ProductController extends Controller
     {
 	
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7000',
         ]);
-        
+	 
         $imageName = time().'.'.$request->image->extension();  
          
-        $request->image->move(public_path('images'), $imageName);
-	
+        $request->image->move(public_path('tot/product'), $imageName);
+	 
+	$product = Product::find($request->id_product);
 
-
+	// Make sure you've got the Page model
+	if($product) {
+	   $product->image = "tot/product/".$imageName;
+   	   $product->save();
+        }
         /* 
             Write Code Here for
             Store $imageName name in DATABASE from HERE 
         */
-        
+        /*      
 	$obj = (object) [
               'aString' => 'some string','request'=>$request,'imageName'=>$imageName,'image'=>$request->image
           ];
 	return json_encode($obj);
-	 
-	//return true;
+        */ 
+	
+	return $request->id_product;
+	
 	//return response()->json('image null');
 
 	/*
