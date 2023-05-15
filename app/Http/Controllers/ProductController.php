@@ -52,32 +52,13 @@ class ProductController extends Controller
 	 
 	$product = Product::find($request->id_product);
 
-	// Make sure you've got the Page model
 	if($product) {
-	   $product->image = "public/tot/product/".$imageName;
+	   $product->image = 'public/tot/product/'.$imageName;
 	   $product->save();
-	   return $product;
+	   return 'updated:true product:'.$product;
         }
-        /* 
-            Write Code Here for
-            Store $imageName name in DATABASE from HERE 
-        */
-        /*      
-	$obj = (object) [
-              'aString' => 'some string','request'=>$request,'imageName'=>$imageName,'image'=>$request->image
-          ];
-	return json_encode($obj);
-        */ 
 	
-	return "nada".$product;
-	
-	//return response()->json('image null');
-
-	/*
-        return back()
-                    ->with('success', 'You have successfully upload image.')
-		    ->with('image', $imageName);
-	 */	
+	return 'updated:false product:'.$product.' id:'.$request->id_product.' image_name:'.'public/tot/product/'.$imageName;
     }
 
 
