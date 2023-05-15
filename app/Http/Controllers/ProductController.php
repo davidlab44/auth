@@ -55,7 +55,7 @@ class ProductController extends Controller
 	if($product) {
 	   $product->image = 'public/tot/product/'.$imageName;
 	   $product->save();
-	   return 'updated:true product:'.$product;
+	   return 'updated:true imageName:'.$imageName.' id_product:'.$request->id_product.' product:'.$product;
         }
 	
 	return 'updated:false product:'.$product.' id:'.$request->id_product.' image_name:'.'public/tot/product/'.$imageName;
