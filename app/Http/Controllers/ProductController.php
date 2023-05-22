@@ -114,12 +114,26 @@ class ProductController extends Controller
         return $article;
     }
 
+    public function delete($id)
+    {
+        $product = Product::find($id);
+	    if($product) {
+            $product->was_desabled = 1;
+            $product->save();
+            $obj = (object) ['was_desabled'=>true,'id' =>$id,'product'=>$product];
+            return $obj;
+	    }
+        $obj = (object) ['was_desabled'=>false,'id' =>$id,'product'=>$product];
+        return $obj;
+    }
+
+    /*
     public function delete(Request $request, $id)
     {
         $article = Product::findOrFail($id);
         $article->delete();
-
         return 204;
     }
+    */
 }
 

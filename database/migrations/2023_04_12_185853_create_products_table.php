@@ -21,7 +21,7 @@ return new class extends Migration
 	    $table->integer('requested_amount');
 	    $table->integer('is_milligram');
 	    $table->integer('is_unit')->default(1);
-	    $table->integer('is_active')->default(0);
+	    $table->integer('was_desabled')->default(0);
             $table->timestamps();
         });   
     }
