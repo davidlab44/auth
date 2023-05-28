@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id2');
+            $table->integer('id2')->nullable();
             $table->integer('client_id');
             $table->integer('product_id');
             $table->integer('product_amount');
-            $table->integer('total');
-            $table->integer('discount');
-            $table->integer('taxes');
+            $table->integer('total')->nullable();
+            $table->integer('discount')->nullable();
+            $table->integer('taxes')->nullable();
             $table->timestamps();
         });
     }
